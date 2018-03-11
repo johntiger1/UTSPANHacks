@@ -8,7 +8,7 @@ typora-copy-images-to: images
 
 I wanted to "just" "apply machine learning" to the data problem posted at the UTSPANHacks at U of T this past weekend (March 10-11). I had an idea/conviction in mind that you could just "run a regression" on the data, and perhaps get useful insights out. Turns out, this is more or less true, but just to prepare the data to pass into the module so that you can tell `scikit learn` or `Tensorflow` to do the regression, is a feat in and of itself. 
 
-# "Data Engineer"
+# "Data Engineering"
 
 Hence, I spent most of the time just getting the data into the form I wanted. The simple task of putting a win/loss column to the Boxscores csv took 40%+ of my "dev" time, and I only solved it by rejecting `pandas` and just resorting to my good old file handling skills in pure python (PP). Once that was finally done, I spent some time on using One-Hot-Encoding (for the country names) to ensure the logistic regression could be done. (note that RFE cannot be done with these string categorical variables). After that I tried doing Recursive Feature Elimination to see which set of variables to run the regression on, but it gave me very weird results (country names, instead of actual game stats):
 
